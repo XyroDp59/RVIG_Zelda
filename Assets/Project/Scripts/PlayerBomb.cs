@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(AudioSource))]
@@ -14,13 +15,23 @@ public class PlayerBomb : MonoBehaviour
 
     [SerializeField] private AudioClip tickingSFX;
     [SerializeField] private AudioClip kaboomSFX;
-    [SerializeField] private ParticleSystem bombParticles;
+    [SerializeField] private ParticleSystem explosionParticles;
+    [SerializeField] private ParticleSystem ghostBombParticles;
     [SerializeField] private Transform player;
     private AudioSource source;
+    private MeshRenderer mesh;
+    private Rigidbody rb;
+    private Vector3 offset;
 
-    public void OnBombTaken()
+    public void ToggleBombVisibility()
     {
-        transform.parent = transform.parent.parent;
+        mesh.enabled = !mesh.enabled;
+        ghostBombParticles.gameObject.SetActive(!ghostBombParticles.gameObject.activeSelf);
+    }
+
+    public void ShowBomb()
+    {
+        if(!mesh.enabled) ToggleBombVisibility();
     }
 
 
@@ -31,6 +42,9 @@ public class PlayerBomb : MonoBehaviour
 
     IEnumerator TickingTimer()
     {
+        rb.useGravity = true;
+        source.clip = tickingSFX;
+        transform.SetParent(null);
         for (int i = 0; i < tickingDuration; i++)
         {
             source.Play();
@@ -41,25 +55,33 @@ public class PlayerBomb : MonoBehaviour
             source.Play();
             yield return halfSecond;
         }
-        source.clip = kaboomSFX;
-        source.Play();
-        GameObject go = Instantiate(bombParticles, transform.position, transform.rotation).gameObject;
-        Destroy(go, 2f);
-
+        Explodes();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         source = GetComponent<AudioSource>();
+        mesh = GetComponent<MeshRenderer>();
+        rb = GetComponent<Rigidbody>();
         source.clip = tickingSFX;
+        offset = transform.position.y * Vector3.up;
     }
 
     public void Explodes()
     {
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero;
+
         source.clip = kaboomSFX;
         source.Play();
-        GameObject go = Instantiate(bombParticles, transform.position, transform.rotation).gameObject;
-        transform.position = player.position;
+
+        GameObject go = Instantiate(explosionParticles, transform.position, transform.rotation).gameObject;
+        go.SetActive(true);
+        Destroy(go, 3f);
+
+        transform.parent = player;
+        transform.position = player.position + offset;
+        ToggleBombVisibility();
     }
 }

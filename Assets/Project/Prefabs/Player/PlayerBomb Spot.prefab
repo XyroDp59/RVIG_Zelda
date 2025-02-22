@@ -49,11 +49,10 @@ MonoBehaviour:
   fastTickingDuration: 1.5
   cooldownBetweenBombs: 1
   bomb: {fileID: 8206560000057389305}
-  tickingSFX: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
-  kaboomSFX: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   explosionParticles: {fileID: 6570000077113456032}
   ghostBombParticles: {fileID: 5135173349160032880}
-  offset: {x: 0, y: 1.36, z: 0}
+  offsetFront: -0.3
+  offsetHeight: 0.4
 --- !u!1001 &2315959258360646952
 PrefabInstance:
   m_ObjectHideFlags: 0

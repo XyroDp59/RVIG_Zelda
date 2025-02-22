@@ -5269,7 +5269,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 1
+  m_SelectMode: 0
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -5384,8 +5384,8 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  m_AttachTransform: {fileID: 4171621312111144296}
-  m_SecondaryAttachTransform: {fileID: 4219159019710182098}
+  m_AttachTransform: {fileID: 0}
+  m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -5415,6 +5415,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
       time: 1
       value: 1
       inSlope: 0
@@ -5426,10 +5435,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
+  m_ThrowVelocityScale: 1
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
@@ -5448,14 +5457,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PermittedDisplacementAxes: -1
   m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowOneHandedScaling: 1
-  m_AllowTwoHandedScaling: 1
+  m_TwoHandedRotationMode: 0
+  m_AllowOneHandedScaling: 0
+  m_AllowTwoHandedScaling: 0
   m_OneHandedScaleSpeed: 0.5
   m_ThresholdMoveRatioForScale: 0.01
   m_ClampScaling: 1
   m_MinimumScaleRatio: 0.75
-  m_MaximumScaleRatio: 1.25
+  m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
 --- !u!114 &6813565067200116259
 MonoBehaviour:
@@ -5472,10 +5481,11 @@ MonoBehaviour:
   tickingDuration: 3
   fastTickingDuration: 1.5
   cooldownBetweenBombs: 1
-  tickingSFX: {fileID: 8300000, guid: d14b106713a74b448bcab90869f1706e, type: 3}
-  kaboomSFX: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  bomb: {fileID: 0}
   explosionParticles: {fileID: 8867206058691524744}
   ghostBombParticles: {fileID: 7449020136157189976}
+  offsetFront: 0.1
+  offsetHeight: 0.3
 --- !u!82 &4213532551505134835
 AudioSource:
   m_ObjectHideFlags: 0

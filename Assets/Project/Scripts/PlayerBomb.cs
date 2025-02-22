@@ -12,6 +12,7 @@ public class PlayerBomb : MonoBehaviour
     [SerializeField] private float fastTickingDuration = 2f;
     [SerializeField] private float cooldownBetweenBombs = 1f;
 
+    private bool isWaiting = true;
     WaitForSeconds second = new WaitForSeconds(1);
     WaitForSeconds halfSecond = new WaitForSeconds(0.5f);
     WaitForSeconds cooldown;
@@ -23,7 +24,8 @@ public class PlayerBomb : MonoBehaviour
     
     private MeshRenderer mesh;
     private Rigidbody rb;
-    public Vector3 offset;
+    [SerializeField] private float offsetFront = 0.1f;
+    [SerializeField] private float offsetHeight = 0.3f;
     private AudioSource source;
 
     void Start()
@@ -59,11 +61,27 @@ public class PlayerBomb : MonoBehaviour
 
     #region Bomb logic
 
+    private void Update()
+    {
+        if (isWaiting)
+        {
+            Transform head = Camera.main.transform;
+            Vector3 horizontalDir = (head.forward - head.forward.y * Vector3.up ).normalized;
+            bomb.localPosition = head.localPosition + offsetFront * horizontalDir + offsetHeight * Vector3.up;
+        }
+    }
+
+    public void OnBombGrabbed()
+    {
+        isWaiting = false;
+    }
+
 
     public void StartTickingTimer()
     {
         StartCoroutine(TickingTimer());
     }
+
 
     IEnumerator TickingTimer()
     {
@@ -105,12 +123,13 @@ public class PlayerBomb : MonoBehaviour
         yield return cooldown;
 
         bomb.parent = transform;
-        bomb.localPosition = offset;
+        //bomb.localPosition = offset;
         //CustomDebugger.log("Bomb Return");
         //CustomDebugger.log("transform.position = " + transform.position.ToString());
         //if (bomb.localPosition != offset) throw new IOException();
         bomb.gameObject.SetActive(true);
         SwitchBombVisibility(false);
+        isWaiting = true;
     }
 }
 #endregion

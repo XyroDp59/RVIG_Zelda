@@ -16,7 +16,5 @@ public class BowMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = mainHand.position;
-        all.rotation = Quaternion.LookRotation(transform.position - middleString.position);
     }
 }

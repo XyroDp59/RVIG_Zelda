@@ -3187,10 +3187,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
-    - target: {fileID: 5611679259177357720, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      propertyPath: controllerTransform
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5615689397997878712, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

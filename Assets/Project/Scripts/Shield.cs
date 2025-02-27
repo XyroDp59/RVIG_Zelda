@@ -1,16 +1,25 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Shield : MonoBehaviour
 {
-    [SerializeField] private Transform controllerTransform;
+    public Transform leftControllerTransform;
+    public Transform rightControllerTransform;
     private MeshRenderer _meshRenderer;
     private MeshCollider _meshCollider;
+    public static Shield Instance;
 
     void Start()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         _meshCollider = GetComponent<MeshCollider>();
+        Instance = this;
         _meshRenderer.enabled = false;
+        _meshCollider.enabled = false;
+    }
+
+    public void SetPositionFromController(Transform controllerTransform)
+    {
         transform.position = controllerTransform.position;
         transform.rotation = controllerTransform.rotation;
         

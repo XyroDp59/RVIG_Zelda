@@ -3057,6 +3057,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5615689397997878712}
     m_Modifications:
+    - target: {fileID: 1305220829915799622, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: leftControllerTransform
+      value: 
+      objectReference: {fileID: 5218104208997173649}
+    - target: {fileID: 1305220829915799622, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: rightControllerTransform
+      value: 
+      objectReference: {fileID: 666701466259357889}
+    - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
@@ -3076,6 +3088,10 @@ PrefabInstance:
     - target: {fileID: 4822692725299722499, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_Name
       value: SwordnShieldSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823826123433789320, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5923864839161345313, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3120,13 +3136,90 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4822692725299722499, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5411512262813307008}
   m_SourcePrefab: {fileID: 100100000, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
 --- !u!4 &2610718973255868916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5923864839161345313, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
   m_PrefabInstance: {fileID: 8506992647194973397}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3810975226690481622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4822692725299722499, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+  m_PrefabInstance: {fileID: 8506992647194973397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5411512262813307008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810975226690481622}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackingType: 2
+  m_UpdateType: 0
+  m_IgnoreTrackingState: 0
+  m_PositionInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Position
+      m_Type: 0
+      m_ExpectedControlType: Vector3
+      m_Id: 6f777c31-7d69-4660-bf49-b3095b58b3e3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RotationInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Rotation
+      m_Type: 0
+      m_ExpectedControlType: Quaternion
+      m_Id: 4ef47305-dc5e-4d8b-a6a7-462d46afefde
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_TrackingStateInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Tracking State
+      m_Type: 0
+      m_ExpectedControlType: Integer
+      m_Id: 20db23ac-95e6-41b1-95ea-705317ec3414
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PositionAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e0b94070-3b30-4cc9-b0ad-8b41d1a76ec8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_RotationAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3e6b8ed9-622f-46e4-88aa-da05529219cf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &8800565525290990150
 PrefabInstance:
   m_ObjectHideFlags: 0

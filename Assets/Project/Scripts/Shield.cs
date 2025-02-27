@@ -3,8 +3,6 @@ using UnityEngine.Serialization;
 
 public class Shield : MonoBehaviour
 {
-    public Transform leftControllerTransform;
-    public Transform rightControllerTransform;
     private MeshRenderer _meshRenderer;
     private MeshCollider _meshCollider;
     public static Shield Instance;
@@ -30,11 +28,11 @@ public class Shield : MonoBehaviour
         vector3.z = - 0.067f;
         transform.localPosition = vector3;
 
-        var angles = transform.rotation.eulerAngles;
+        var angles = transform.localRotation.eulerAngles;
         angles.x += 40f;
-        var rotation = transform.rotation;
+        var rotation = transform.localRotation;
         rotation.eulerAngles = angles;
-        transform.rotation = rotation;
+        transform.localRotation = rotation;
     }
     
     void Update()

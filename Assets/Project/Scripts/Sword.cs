@@ -20,7 +20,7 @@ public class Sword : MonoBehaviour
     {
         swordActive = true;
         _rightHanded = args.interactorObject.transform.parent.name.Contains("Right");
-        Shield.Instance.SetPositionFromController(_rightHanded ? leftControllerTransform : rightControllerTransform);
+        Shield.instance.SetPositionFromController(_rightHanded ? leftControllerTransform : rightControllerTransform);
     }
 
     public void OnSwordReleased()

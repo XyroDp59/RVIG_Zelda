@@ -9,6 +9,12 @@ public class Arrow : MonoBehaviour
 
     private Vector3 _previousPos;
 
+
+    public void ApplyForce(float force)
+    {
+        
+    }
+    
     public void OnRelease()
     {
         

@@ -13,6 +13,7 @@ public class CustomDebugger : MonoBehaviour
     {
         instance.textUI.text += "\n" + s;
     }
+    
     private void Start()
     {
         instance = this;

@@ -21,5 +21,6 @@ public class BowString : MonoBehaviour
         
         transform.LookAt(endPos);
         transform.Rotate(Vector3.left, 90);
+        
     }
 }

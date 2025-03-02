@@ -3326,6 +3326,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5615689397997878712}
     m_Modifications:
+    - target: {fileID: 792330471916782313, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: leftControllerTransform
+      value: 
+      objectReference: {fileID: 5218104208997173649}
+    - target: {fileID: 792330471916782313, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: rightControllerTransform
+      value: 
+      objectReference: {fileID: 666701466259357889}
     - target: {fileID: 910150000554688458, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.106
@@ -3497,7 +3505,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7862207684358717888, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RotationInput:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Rotation
       m_Type: 0

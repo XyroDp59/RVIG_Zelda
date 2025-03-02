@@ -5336,9 +5336,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 6813565067200116259}
         m_TargetAssemblyTypeName: PlayerBomb, Assembly-CSharp
         m_MethodName: StartTickingTimer
@@ -5351,6 +5348,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5481,11 +5481,10 @@ MonoBehaviour:
   tickingDuration: 3
   fastTickingDuration: 1.5
   cooldownBetweenBombs: 1
-  bomb: {fileID: 0}
+  bombSpawner: {fileID: 0}
+  bombPrefab: {fileID: 4716021902810746968}
   explosionParticles: {fileID: 8867206058691524744}
   ghostBombParticles: {fileID: 7449020136157189976}
-  offsetFront: 0.1
-  offsetHeight: 0.3
 --- !u!82 &4213532551505134835
 AudioSource:
   m_ObjectHideFlags: 0

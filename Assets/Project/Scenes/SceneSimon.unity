@@ -825,6 +825,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b3b5797b7db80e8bbbdf7fcb02a8e1b, type: 3}
+--- !u!1 &751970293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+  m_PrefabInstance: {fileID: 1496788034185275748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &751970298
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751970293}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &788111584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3623,6 +3649,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 4110387920198988852, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5615689397997878712, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3664,13 +3698,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7859436317889228933, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859436317889228933, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 3127728407676174906}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 751970298}
   m_SourcePrefab: {fileID: 100100000, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
 --- !u!114 &3127728407676174906
 MonoBehaviour:

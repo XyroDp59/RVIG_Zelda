@@ -21,6 +21,7 @@ public class Sword : MonoBehaviour
         swordActive = true;
         _rightHanded = args.interactorObject.transform.parent.name.Contains("Right");
         Shield.instance.SetPositionFromController(_rightHanded ? leftControllerTransform : rightControllerTransform);
+        //transform.SetParent(args.interactorObject.transform.parent);
     }
 
     public void OnSwordReleased()
@@ -37,5 +38,18 @@ public class Sword : MonoBehaviour
             transform.localPosition = _defaultPosition;
             transform.localRotation = _defaultRotation;
         }
+        /*
+        else if (_rightHanded)
+        {
+            //CustomDebugger.log("right");
+            transform.position = rightControllerTransform.position;
+            transform.rotation = rightControllerTransform.rotation;
+        }
+
+        else
+        {
+            transform.position = leftControllerTransform.position;
+            transform.rotation = leftControllerTransform.rotation;
+        }*/
     }
 }

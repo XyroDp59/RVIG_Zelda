@@ -17,7 +17,7 @@ public class CustomDebugger : MonoBehaviour
     private void Start()
     {
         instance = this;
-        instance.textUI.text = "Xyro tu tournes";
+        instance.textUI.text = "Suavemente";
     }
 
 }

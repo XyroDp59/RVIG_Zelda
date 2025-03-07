@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1139585985546086946
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 753641128909744613}
-  m_Layer: 0
-  m_Name: Right Hand Attach
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &753641128909744613
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139585985546086946}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0047}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2656490888036850227}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494650529058947172
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,37 +83,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_Variable: {fileID: 0}
---- !u!1 &3164563073606556668
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7976775464243407415}
-  m_Layer: 0
-  m_Name: Left Hand Attach
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7976775464243407415
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164563073606556668}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0054}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2656490888036850227}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4434941045174635396
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,11 +379,11 @@ GameObject:
   - component: {fileID: 8695927487046410865}
   - component: {fileID: 3702235919581987241}
   - component: {fileID: 1465948169176188807}
-  - component: {fileID: 9145256633601364233}
   - component: {fileID: 3842737673656549663}
   - component: {fileID: 6799235700490956355}
   - component: {fileID: 7712085051206809528}
   - component: {fileID: 7023075844428306654}
+  - component: {fileID: 2486739768433239824}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -463,12 +401,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.018036455, y: 0.8744085, z: 0.40374708}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7033180119311549579}
-  - {fileID: 753641128909744613}
-  - {fileID: 7976775464243407415}
+  - {fileID: 367191110078535050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8695927487046410865
@@ -534,7 +471,7 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9145256633601364233}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerBomb, Assembly-CSharp
         m_MethodName: ShowBomb
         m_Mode: 1
@@ -549,7 +486,7 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9145256633601364233}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerBomb, Assembly-CSharp
         m_MethodName: HideBomb
         m_Mode: 1
@@ -570,9 +507,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9145256633601364233}
-        m_TargetAssemblyTypeName: PlayerBomb, Assembly-CSharp
-        m_MethodName: ShowBomb
+      - m_Target: {fileID: 2486739768433239824}
+        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
+        m_MethodName: OnSwordGrabbed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -585,9 +522,9 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9145256633601364233}
-        m_TargetAssemblyTypeName: PlayerBomb, Assembly-CSharp
-        m_MethodName: StartTickingTimer
+      - m_Target: {fileID: 2486739768433239824}
+        m_TargetAssemblyTypeName: Sword, Assembly-CSharp
+        m_MethodName: OnSwordReleased
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -612,7 +549,7 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9145256633601364233}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerBomb, Assembly-CSharp
         m_MethodName: ShowBomb
         m_Mode: 1
@@ -630,15 +567,15 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 367191110078535050}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0
-  m_MovementType: 0
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 2
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -684,11 +621,11 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 0
+  m_RetainTransformParent: 1
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
 --- !u!114 &1465948169176188807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,26 +649,6 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.75
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
---- !u!114 &9145256633601364233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7456166913269515544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddca327155c0ac8499eb662fa414ca53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tickingDuration: 3
-  fastTickingDuration: 1.5
-  cooldownBetweenBombs: 1
-  bomb: {fileID: 0}
-  explosionParticles: {fileID: 0}
-  ghostBombParticles: {fileID: 0}
-  offsetFront: 0.1
-  offsetHeight: 0.3
 --- !u!82 &3842737673656549663
 AudioSource:
   m_ObjectHideFlags: 0
@@ -901,3 +818,48 @@ CapsuleCollider:
   m_Height: 1.05
   m_Direction: 2
   m_Center: {x: 0.000000018626451, y: -0.002826251, z: -0.4}
+--- !u!114 &2486739768433239824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7456166913269515544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce75d9d07114e47ff9bf12ba4ec8ee2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftControllerTransform: {fileID: 0}
+  rightControllerTransform: {fileID: 0}
+--- !u!1 &8371753885601692479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367191110078535050}
+  m_Layer: 0
+  m_Name: AttachTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367191110078535050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371753885601692479}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.9396927, y: -0, z: -0, w: -0.3420201}
+  m_LocalPosition: {x: 0, y: 0.051, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2656490888036850227}
+  m_LocalEulerAnglesHint: {x: 220, y: 0, z: 0}

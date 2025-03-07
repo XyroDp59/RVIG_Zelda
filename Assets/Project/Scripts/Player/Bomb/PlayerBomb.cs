@@ -127,7 +127,6 @@ namespace Project.Scripts.Player.Bomb
             {
                 GameObject go = Instantiate(bombPrefab, bombSpawner);
                 go.transform.localPosition = Vector3.zero;
-                CustomDebugger.log("hihiha");
             }
         }
 
@@ -137,7 +136,23 @@ namespace Project.Scripts.Player.Bomb
             GameObject go = Instantiate(explosionParticles, transform.position, transform.rotation).gameObject;
             go.SetActive(true);
             Destroy(gameObject);
-            Destroy(go, 3f);
+            //Destroy(go, 3f);
+            StartCoroutine(SpawnNewBomb());
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Armor a;
+            if(collision.gameObject.TryGetComponent<Armor>(out a))
+            {
+                Explodes();
+            }
+
+            Health h;
+            if (collision.gameObject.TryGetComponent<Health>(out h))
+            {
+                Explodes();
+            }
         }
     }
     #endregion

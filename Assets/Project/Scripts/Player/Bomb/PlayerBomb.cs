@@ -32,6 +32,12 @@ namespace Project.Scripts.Player.Bomb
         Rigidbody rb;
         Material material;
 
+        /*
+         
+        garder en mémoire une liste des positions toutes les 1/f secondes des throw_Duration dernières secondes
+        rendre la force du lancer proportionnel à la distance (en local position) entre la 1ere et la dernière position de la liste
+         
+         */
 
         void Start()
         {
@@ -85,7 +91,7 @@ namespace Project.Scripts.Player.Bomb
         public void StartTickingTimer()
         {
             if (!isTicking) StartCoroutine(TickingTimer());
-            StartCoroutine(SpawnNewBomb());
+            StartCoroutine(SpawnNewBombDelay());
         }
 
         IEnumerator Flicker()
@@ -120,9 +126,14 @@ namespace Project.Scripts.Player.Bomb
             Explodes();
         }
 
-        IEnumerator SpawnNewBomb()
+        IEnumerator SpawnNewBombDelay()
         {
             yield return cooldown;
+            SpawnNewBomb();
+        }
+
+        private void SpawnNewBomb()
+        {
             if (bombSpawner.childCount == 0)
             {
                 GameObject go = Instantiate(bombPrefab, bombSpawner);
@@ -130,14 +141,13 @@ namespace Project.Scripts.Player.Bomb
             }
         }
 
-
         public void Explodes()
         {
             GameObject go = Instantiate(explosionParticles, transform.position, transform.rotation).gameObject;
             go.SetActive(true);
             Destroy(gameObject);
-            //Destroy(go, 3f);
-            StartCoroutine(SpawnNewBomb());
+            Destroy(go, 3f);
+            SpawnNewBomb();
         }
 
         private void OnCollisionEnter(Collision collision)

@@ -122,45 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &129596915 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-  m_PrefabInstance: {fileID: 1646297287}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &129596920
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129596915}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &129596921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129596915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70f36b18502a79459d2147d31316512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bombDamage: 1
 --- !u!1 &299639867
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,6 +938,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].time
+      value: -0.0010910034
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].time
+      value: 0.5167766
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[2].time
+      value: 0.85472965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[3].time
+      value: 0.99664307
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].value
+      value: 0.997921
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].value
+      value: 0.20333514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[2].value
+      value: 0.28678554
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[3].value
+      value: 1.000679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].inSlope
+      value: -0.0151337115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[2].inSlope
+      value: 0.8716439
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].outSlope
+      value: -0.0151337115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[2].outSlope
+      value: 0.8716439
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].outWeight
+      value: 0.16540049
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[2].outWeight
+      value: 0.5126229
+      objectReference: {fileID: 0}
     - target: {fileID: 5158482487143522900, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -988,6 +1021,22 @@ PrefabInstance:
     - target: {fileID: 5158482487143522900, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295614180473671247, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_Pitch
+      value: -2.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295614180473671247, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295614180473671247, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+    - target: {fileID: 5295614180473671247, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_IsActive
@@ -1040,13 +1089,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 129596920}
-    - targetCorrespondingSourceObject: {fileID: 5476002524804236377, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 129596921}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
 --- !u!1 &1652371782
 GameObject:

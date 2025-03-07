@@ -6,15 +6,12 @@ public class Explosion : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        /* 
-        TODO :
+        CustomDebugger.log("Triggered");
         Armor armor;
          
         if(other.TryGetComponent(out armor))
         {
             armor.Break();
         }
-          
-         */
     }
 }

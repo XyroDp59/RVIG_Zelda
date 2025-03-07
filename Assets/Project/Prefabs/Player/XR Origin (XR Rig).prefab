@@ -3375,7 +3375,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 666701466259357889}
     - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_TrackPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1953642003895805008, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
@@ -3397,6 +3413,14 @@ PrefabInstance:
     - target: {fileID: 4822692725299722499, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_Name
       value: SwordnShieldSpot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694204370706424033, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823826123433789320, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_Constraints
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 5823826123433789320, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       propertyPath: m_IsKinematic

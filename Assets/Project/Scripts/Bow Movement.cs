@@ -1,28 +1,35 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class BowMovement : MonoBehaviour
 {
-    [SerializeField] private Transform leftHand;
-    [SerializeField] private Transform rightHand;
-
     [SerializeField] private GameObject stringMiddle;
-    
     [SerializeField] private Arrow arrowPrefab;
 
-    private bool _bowIsLeft;
+    public bool bowIsLeft;
+    
     private bool _bowTaken;
     private bool _arrowActive;
     private bool _isStringTaken;
-
     private Arrow _currentArrow;
+    private XRGrabInteractable _grabInteractable;
+
+
+    public void Awake()
+    {
+        _grabInteractable = GetComponent<XRGrabInteractable>();
+    }
     
-    
+
     public void OnTaken(SelectEnterEventArgs args)
     {
         _bowTaken = true;
-        _bowIsLeft = args.interactorObject.transform.parent.CompareTag("Left");
+        bowIsLeft = args.interactorObject.transform.parent.CompareTag("Left");
+        CreateArrow();
     }
 
     public void OnRelease()
@@ -32,46 +39,73 @@ public class BowMovement : MonoBehaviour
 
     public void OnStringTaken()
     {
-        if (!_bowTaken) return;
-
+        if (!(_bowTaken && _arrowActive)) return;
+        _isStringTaken = true;
+        
+        _currentArrow.transform.position = stringMiddle.transform.position;
         _currentArrow.transform.parent = stringMiddle.transform;
     }
 
     public void OnStringRelease()
     {
-        if (!_bowTaken || !_arrowActive || !_isStringTaken) return; 
+        if (!(_bowTaken && _arrowActive && _isStringTaken)) return;
         
+        _isStringTaken = false;
         
-        _currentArrow.transform.parent = transform.parent;
-        _currentArrow.ApplyForce(10);
-        
+        _currentArrow.transform.parent = XRData.Instance.XRPlayer.transform.parent;
+
+        _currentArrow.transform.position = transform.position + transform.forward * 0.1f;
+        _currentArrow.ApplyForce(1000);
+
+        _arrowActive = false;
+        _currentArrow = null;
+        StartCoroutine(ArrowCoroutine());
+    }
+
+    IEnumerator ArrowCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CreateArrow();
     }
 
     void CreateArrow()
     {
         _arrowActive = true;
         _currentArrow = Instantiate(arrowPrefab);
-        if (_bowIsLeft)
+        
+        if (bowIsLeft)
         {
-            _currentArrow.transform.SetParent(rightHand);
+            _currentArrow.transform.position = XRData.Instance.rightHand.position;
+            _currentArrow.transform.rotation = XRData.Instance.rightHand.rotation;
+            _currentArrow.transform.SetParent(XRData.Instance.rightHand.transform);
         }
         else
         {
-            _currentArrow.transform.SetParent(leftHand);
+            _currentArrow.transform.position = XRData.Instance.leftHand.position;
+            _currentArrow.transform.rotation = XRData.Instance.leftHand.rotation;
+            _currentArrow.transform.SetParent(XRData.Instance.leftHand);
         }
-        CustomDebugger.log("String taken");
     }
     
     
     // Update is called once per frame
     void Update()
     {
-        if (_bowTaken && !_arrowActive)
+        if (_bowTaken)
         {
-            CreateArrow();
+            if (bowIsLeft)
+            {
+                transform.position = XRData.Instance.leftHand.position;
+                transform.rotation = XRData.Instance.leftHand.rotation;
+            }
+            else
+            {
+                transform.position = XRData.Instance.rightHand.position;
+                transform.rotation = XRData.Instance.rightHand.rotation;
+            }
         }
 
-        if (_bowTaken && _arrowActive & _isStringTaken)
+        if (_bowTaken && _arrowActive && _isStringTaken)
         {
             _currentArrow.transform.rotation = Quaternion.LookRotation(transform.position-stringMiddle.transform.position);
         }

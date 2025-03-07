@@ -7,32 +7,25 @@ public class Arrow : MonoBehaviour
     private bool _launched = false;
     private bool _ready = false;
 
-    private Vector3 _previousPos;
-
-
+    private Rigidbody _rb;
+    
+    void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
+    
     public void ApplyForce(float force)
     {
+        _launched = true;
         
+        _rb.useGravity = true;
+        _rb.isKinematic = false;
+        
+        _rb.AddForce(transform.forward * force);
     }
     
     public void OnRelease()
     {
         
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (_launched)
-        {
-            transform.rotation = Quaternion.LookRotation(transform.position - _previousPos);
-            _previousPos = transform.position;
-        }
     }
 }

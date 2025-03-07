@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class MiddleMovement : MonoBehaviour
 {
+    [SerializeField] private BowMovement bowMovement;
     [SerializeField] private Transform up;
     [SerializeField] private Transform down;
 
@@ -45,6 +46,18 @@ public class MiddleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_taken)
+        {
+            if (bowMovement.bowIsLeft)
+            {
+                transform.position = XRData.Instance.rightHand.transform.position;
+            }
+            else
+            {
+                transform.position = XRData.Instance.leftHand.transform.position;
+            }
+        }
+        
         if (!_taken)
         {
             transform.position = (up.position + down.position)/2;

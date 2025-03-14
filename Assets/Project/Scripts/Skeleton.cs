@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,6 +7,8 @@ public class Skeleton : MonoBehaviour
 {
     [SerializeField] private bool isActive;
     [SerializeField] private float attackDuration;
+    [SerializeField] private Damager damager;
+    [SerializeField] private float stunDuration;
     private GameObject _player;
     private NavMeshAgent _agent;
     
@@ -13,12 +16,15 @@ public class Skeleton : MonoBehaviour
     private int _deathTrigHash;
     private int _walkBoolHash;
     private int _attackTrigHash;
+    private int _hitTrigHash;
     private Health _health;
 
     private enum State
     {
         Default,
-        Attacking
+        Attacking,
+        Damaged,
+        Ded
     }
     
     private State _state;
@@ -29,13 +35,19 @@ public class Skeleton : MonoBehaviour
         _deathTrigHash = Animator.StringToHash("Death");
         _walkBoolHash = Animator.StringToHash("Walking");
         _attackTrigHash = Animator.StringToHash("Attack");
+        _hitTrigHash = Animator.StringToHash("Hit");
         _health = GetComponent<Health>();
         _player = GameObject.FindGameObjectWithTag("Player");
         _agent = GetComponent<NavMeshAgent>();
         _state = State.Default;
     }
 
-    private void Update()
+    private void Start()
+    {
+        _health.Death.AddListener(Death);
+    }
+
+    private void FixedUpdate()
     {
         if(!isActive || !_player || _state != State.Default) return;
         //CustomDebugger.log(distance.ToString());
@@ -64,17 +76,40 @@ public class Skeleton : MonoBehaviour
         _agent.SetDestination(transform.position);
 
         yield return new WaitForSeconds(attackDuration);
-        
-        _state = State.Default;
+        if(_state == State.Attacking) _state = State.Default;//permet de ne pas interrompre une animation de degats
+    }
+
+    private IEnumerator DamagedRoutine()
+    {
+        //CustomDebugger.log("damaged routine");
+        yield return null;//wait to see if death triggered
+        if (_state != State.Ded)
+        {
+            _state = State.Damaged;
+            animator.SetTrigger(_hitTrigHash);
+            yield return new WaitForSeconds(stunDuration);
+            _state = State.Default;
+        }
+    }
+
+    private void Death()
+    {
+        animator.SetTrigger(_deathTrigHash);
+        _state = State.Ded;
+        Destroy(gameObject, 1f);
     }
     
     private void OnCollisionEnter(Collision other)
     {
-        CustomDebugger.log("bone");
-        Debug.Log("bone");
-        if (other.gameObject.CompareTag("Weapon"))
+        Damager otherDamager;
+        if (other.gameObject.TryGetComponent<Damager>(out otherDamager))
         {
-            animator.SetTrigger(_deathTrigHash);
+            if (otherDamager.team != damager.team && _state != State.Damaged && _state != State.Ded)
+            {
+                _health.addHealth(otherDamager.damage);
+                //CustomDebugger.log(otherDamager.damage.ToString());
+                StartCoroutine(DamagedRoutine());
+            }
         }
     }
 }

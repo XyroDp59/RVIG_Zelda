@@ -3485,6 +3485,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4822692725299722499, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5411512262813307008}
+    - targetCorrespondingSourceObject: {fileID: 5694204370706424033, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4702219769900364875}
   m_SourcePrefab: {fileID: 100100000, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
 --- !u!23 &11563137582882671 stripped
 MeshRenderer:
@@ -3602,6 +3605,25 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 0
     m_Flags: 0
+--- !u!1 &4110387920198988852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5694204370706424033, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+  m_PrefabInstance: {fileID: 8506992647194973397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4702219769900364875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110387920198988852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b506734bda1504b07873f7b3c3ffae73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  damage: -10
 --- !u!1001 &8800565525290990150
 PrefabInstance:
   m_ObjectHideFlags: 0

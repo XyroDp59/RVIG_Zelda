@@ -19,6 +19,7 @@ public class Health : MonoBehaviour
         if (armor && health <0) return;
 
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
+        //CustomDebugger.log($"Health changed to {currentHealth}");
         float f = (float)currentHealth / ((float)maxHealth);
         //healthBar.anchorMax = new Vector2(f, 1);
         if (currentHealth <= 0)

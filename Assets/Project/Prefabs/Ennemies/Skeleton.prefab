@@ -546,6 +546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   attackDuration: 1.2
+  damager: {fileID: 4030564963163105643}
+  stunDuration: 1
 --- !u!54 &5305311719143149702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -585,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88b238f9963e304a88f193e2ea5bec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 30
   healthBar: {fileID: 0}
   armor: {fileID: 0}
   Death:
@@ -2691,6 +2693,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5746359903908249793, guid: 78925be475d86164f92d73a589da7cba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 625031433835522299}
+    - targetCorrespondingSourceObject: {fileID: 5746359903908249793, guid: 78925be475d86164f92d73a589da7cba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4030564963163105643}
   m_SourcePrefab: {fileID: 100100000, guid: 78925be475d86164f92d73a589da7cba, type: 3}
 --- !u!1 &5793961804580127576 stripped
 GameObject:
@@ -2720,6 +2725,20 @@ CapsuleCollider:
   m_Height: 0.98
   m_Direction: 1
   m_Center: {x: 0.000000082635694, y: 0.58, z: -0.00000043981876}
+--- !u!114 &4030564963163105643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5793961804580127576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b506734bda1504b07873f7b3c3ffae73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  damage: 10
 --- !u!4 &6567261168348322274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968872607988292219, guid: 78925be475d86164f92d73a589da7cba, type: 3}

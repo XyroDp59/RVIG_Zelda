@@ -6,7 +6,10 @@ using UnityEngine.AI;
 
 public class FlyingEnemy : MonoBehaviour
 {
+    [SerializeField] private Projectile projectilePrefab;
+    [SerializeField] private float projectileOffSet;
     [SerializeField] private Transform target;
+    [SerializeField] private Transform nose;
     
     private NavMeshAgent _agent;
     
@@ -18,20 +21,34 @@ public class FlyingEnemy : MonoBehaviour
     private void Start()
     {
         _agent.SetDestination(target.position);
-        
+        StartCoroutine(FireCoroutine());
     }
 
     IEnumerator FireCoroutine()
     {
-        if ((target.position - transform.position).magnitude > 2.1) yield return null;
-        
-        yield return new WaitForSeconds(1f);
+        while (true)
+        {
+            if ((target.position - transform.position).magnitude <= 2)
+            {
+                yield return new WaitForSeconds(1);
+                
+                Fire();
+            }
 
-        Fire();
+            yield return null;
+        }
     }
 
     void Fire()
     {
-        
+        Vector3 startPos = nose.position + transform.forward * projectileOffSet;
+        Vector3 direction = (target.position - startPos).normalized;
+        Projectile projectile = Instantiate(projectilePrefab, startPos, Quaternion.identity);
+        projectile.Initialise(direction);
+    }
+
+    private void Update()
+    {
+        _agent.SetDestination(target.position);
     }
 }

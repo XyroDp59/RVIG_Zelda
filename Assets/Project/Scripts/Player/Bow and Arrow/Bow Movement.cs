@@ -17,11 +17,13 @@ public class BowMovement : MonoBehaviour
     private bool _isStringTaken;
     private Arrow _currentArrow;
     private XRGrabInteractable _grabInteractable;
+    private AudioSource _releaseSound;
 
 
     public void Awake()
     {
         _grabInteractable = GetComponent<XRGrabInteractable>();
+        _releaseSound = GetComponent<AudioSource>();
     }
     
 
@@ -44,6 +46,7 @@ public class BowMovement : MonoBehaviour
         
         _currentArrow.transform.position = stringMiddle.transform.position;
         _currentArrow.transform.parent = stringMiddle.transform;
+        _releaseSound.Play();
     }
 
     public void OnStringRelease()

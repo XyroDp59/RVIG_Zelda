@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,10 +13,12 @@ public class FlyingEnemy : MonoBehaviour
     [SerializeField] private Transform nose;
     
     private NavMeshAgent _agent;
+    private AudioSource _injuredSound;
     
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _injuredSound = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -42,7 +45,7 @@ public class FlyingEnemy : MonoBehaviour
     void Fire()
     {
         Vector3 startPos = nose.position + transform.forward * projectileOffSet;
-        Vector3 direction = (target.position - startPos).normalized;
+        Vector3 direction = ((target.position+Vector3.up) - startPos).normalized;
         Projectile projectile = Instantiate(projectilePrefab, startPos, Quaternion.identity);
         projectile.Initialise(direction);
     }
@@ -50,5 +53,10 @@ public class FlyingEnemy : MonoBehaviour
     private void Update()
     {
         _agent.SetDestination(target.position);
+    }
+
+    public void OnDamaged()
+    {
+        _injuredSound.Play();
     }
 }

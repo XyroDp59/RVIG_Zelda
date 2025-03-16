@@ -3512,10 +3512,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2495599192621055555, guid: c44e496a92341fb6b8ab373c5900a354, type: 3}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4175698416774583228, guid: c44e496a92341fb6b8ab373c5900a354, type: 3}
       propertyPath: m_Name
       value: Egg
@@ -4623,10 +4619,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2293180831336724365, guid: 4fb60b1a7fb56ab1d946c016cbac8836, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453654958163471892, guid: 4fb60b1a7fb56ab1d946c016cbac8836, type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2926209965952530229, guid: 4fb60b1a7fb56ab1d946c016cbac8836, type: 3}

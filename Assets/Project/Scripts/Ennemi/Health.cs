@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] Armor armor;
 
     public UnityEvent Death;
+    public UnityEvent Damaged;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class Health : MonoBehaviour
     public void addHealth(int health)
     {
         if (armor && health <0) return;
-
+        Damaged.Invoke();
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
         //CustomDebugger.log($"Health changed to {currentHealth}");
         float f = (float)currentHealth / ((float)maxHealth);

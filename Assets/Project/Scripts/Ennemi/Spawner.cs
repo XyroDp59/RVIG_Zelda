@@ -20,5 +20,7 @@ public class Spawner : MonoBehaviour
     {
         yield return _delay;
         int r = Random.Range(0, _prefabList.Count);
+        Instantiate(_prefabList[r], new Vector3(Random.Range(-5,5), 0, Random.Range(-5, 5)), Quaternion.identity);
+        StartCoroutine(SpawningCoroutine());
     }
 }

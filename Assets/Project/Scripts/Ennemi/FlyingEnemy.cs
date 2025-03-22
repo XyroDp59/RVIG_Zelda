@@ -13,12 +13,16 @@ public class FlyingEnemy : MonoBehaviour
     private NavMeshAgent _agent;
     private AudioSource _injuredSound;
     private Rigidbody _rigidbody;
+    private Animator _animator;
+    private int _deathTrigHash;
     
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _injuredSound = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
+        _deathTrigHash = Animator.StringToHash("Death");
     }
 
     private void Start()
@@ -76,8 +80,10 @@ public class FlyingEnemy : MonoBehaviour
         {
             CustomDebugger.log("ouch");
             OnDamaged();
+            StopCoroutine(FireCoroutine());
             _rigidbody.useGravity = true;
-            Destroy(gameObject, 2f);
+            _animator.SetTrigger(_deathTrigHash);
+            Destroy(gameObject, 1.6f);
         }
     }
 }

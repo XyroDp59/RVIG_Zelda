@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1185249087802769268}
   m_Layer: 0
   m_Name: Left Controller
-  m_TagString: Untagged
+  m_TagString: Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.36144
-  m_Radius: 0.1
+  m_Radius: 0.01
   m_SlopeLimit: 45
   m_StepOffset: 0.5
   m_SkinWidth: 0.08
@@ -347,9 +347,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthBar: {fileID: 0}
+  healthBarFill: {fileID: 0}
   armor: {fileID: 0}
   Death:
+    m_PersistentCalls:
+      m_Calls: []
+  Damaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &762007916422366973
@@ -367,7 +370,7 @@ GameObject:
   - component: {fileID: 4210692489862031418}
   m_Layer: 0
   m_Name: Right Controller
-  m_TagString: Untagged
+  m_TagString: Right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3979,6 +3982,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   damage: -10
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollision:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8800565525290990150
 PrefabInstance:
   m_ObjectHideFlags: 0

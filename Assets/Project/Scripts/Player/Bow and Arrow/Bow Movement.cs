@@ -36,7 +36,10 @@ public class BowMovement : MonoBehaviour
 
     public void OnRelease()
     {
+        CustomDebugger.log("bow dropped");
         _bowTaken = false;
+        _arrowActive = false;
+        Destroy(_currentArrow.gameObject);
     }
 
     public void OnStringTaken()

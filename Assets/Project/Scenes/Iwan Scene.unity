@@ -3241,17 +3241,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 54194576460386121, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      propertyPath: m_TagString
-      value: Left
-      objectReference: {fileID: 0}
     - target: {fileID: 259137635992405955, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
-      objectReference: {fileID: 0}
-    - target: {fileID: 762007916422366973, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      propertyPath: m_TagString
-      value: Right
       objectReference: {fileID: 0}
     - target: {fileID: 5615689397997878712, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3292,14 +3284,6 @@ PrefabInstance:
     - target: {fileID: 5615689397997878712, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7579932506257542679, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      propertyPath: m_Radius
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082400053931119308, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
-      propertyPath: m_RaycastMask.m_Bits
-      value: 33
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

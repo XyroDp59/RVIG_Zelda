@@ -5743,7 +5743,7 @@ GameObject:
   - component: {fileID: 8721777452722000391}
   - component: {fileID: 3876359188832713138}
   - component: {fileID: 9197837278734227294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: explosion effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

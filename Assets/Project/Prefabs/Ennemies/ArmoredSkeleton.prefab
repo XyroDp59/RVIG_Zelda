@@ -547,7 +547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  attackStartUpDuration: 0
   attackDuration: 1.2
+  attackLag: 0
   damager: {fileID: 4030564963163105643}
   stunDuration: 1
 --- !u!54 &5305311719143149702
@@ -590,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
-  healthBar: {fileID: 8755280217007190429}
+  healthBarFill: {fileID: 0}
   armor: {fileID: 7262967835539639178}
   Death:
     m_PersistentCalls:
@@ -2744,12 +2746,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   damage: 10
+  blocked:
+    m_PersistentCalls:
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
       m_Calls: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
+  collider: {fileID: 0}
 --- !u!4 &6567261168348322274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968872607988292219, guid: 78925be475d86164f92d73a589da7cba, type: 3}
@@ -3041,13 +3047,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4885518574273976178, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6668390385156909093, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6668390385156909093, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668390385156909093, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 6989181040563297205, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
       propertyPath: m_Name
       value: Armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989181040563297205, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

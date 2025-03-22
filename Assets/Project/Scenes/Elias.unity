@@ -1296,9 +1296,17 @@ PrefabInstance:
       value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
-      propertyPath: _prefabList.Array.size
-      value: 4
+      propertyPath: _cooldown
+      value: 4.72
       objectReference: {fileID: 0}
+    - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
+      propertyPath: _prefabList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
+      propertyPath: _prefabList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1808942832135976186, guid: 6ec4ac59da92d3940817ff1413114ff9, type: 3}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: _prefabList.Array.data[2]
       value: 

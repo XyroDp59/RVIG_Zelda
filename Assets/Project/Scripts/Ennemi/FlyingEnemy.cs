@@ -12,21 +12,23 @@ public class FlyingEnemy : MonoBehaviour
     
     private NavMeshAgent _agent;
     private AudioSource _injuredSound;
+    private Rigidbody _rigidbody;
     
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _injuredSound = GetComponent<AudioSource>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        _agent.SetDestination(target.position);
-        StartCoroutine(FireCoroutine());
         if(target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        _agent.SetDestination(target.position);
+        StartCoroutine(FireCoroutine());
     }
 
     IEnumerator FireCoroutine()
@@ -60,5 +62,22 @@ public class FlyingEnemy : MonoBehaviour
     public void OnDamaged()
     {
         _injuredSound.Play();
+    }
+
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     CustomDebugger.log(other.gameObject.name + "triggered");
+    // }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //CustomDebugger.log(collision.gameObject.name + "collided");
+        if (collision.collider.CompareTag("Weapon"))
+        {
+            CustomDebugger.log("ouch");
+            OnDamaged();
+            _rigidbody.useGravity = true;
+            Destroy(gameObject, 2f);
+        }
     }
 }

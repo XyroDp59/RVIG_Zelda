@@ -20,11 +20,16 @@ public class Health : MonoBehaviour
         if (armor && health <0) return;
         Damaged.Invoke();
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
-        //CustomDebugger.log($"Health changed to {currentHealth}");
-        float f = (float)currentHealth / ((float)maxHealth);
-        var max = healthBarFill.anchorMax;
-        max.x = f;
-        healthBarFill.anchorMax = max;
+        CustomDebugger.log($"Health changed to {currentHealth}");
+        
+        if(healthBarFill)
+        {
+            float f = (float)currentHealth / ((float)maxHealth);
+            var max = healthBarFill.anchorMax;
+            max.x = f;
+            healthBarFill.anchorMax = max;
+        }
+        
         if (currentHealth <= 0)
         {
             Death.Invoke();

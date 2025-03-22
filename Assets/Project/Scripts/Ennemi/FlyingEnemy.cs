@@ -23,6 +23,10 @@ public class FlyingEnemy : MonoBehaviour
     {
         _agent.SetDestination(target.position);
         StartCoroutine(FireCoroutine());
+        if(target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     IEnumerator FireCoroutine()

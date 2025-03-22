@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField] public int maxHealth;
-    [SerializeField] private RectTransform healthBar;
+    [SerializeField] private RectTransform healthBarFill;
     private int currentHealth;
     [SerializeField] Armor armor;
 
@@ -22,7 +22,9 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
         //CustomDebugger.log($"Health changed to {currentHealth}");
         float f = (float)currentHealth / ((float)maxHealth);
-        //healthBar.anchorMax = new Vector2(f, 1);
+        var max = healthBarFill.anchorMax;
+        max.x = f;
+        healthBarFill.anchorMax = max;
         if (currentHealth <= 0)
         {
             Death.Invoke();

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,6 +18,7 @@ public class Health : MonoBehaviour
     }
     public void addHealth(int health)
     {
+        //CustomDebugger.log(armor.IsUnityNull().ToString());
         if (armor && health <0) return;
         Damaged.Invoke();
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);

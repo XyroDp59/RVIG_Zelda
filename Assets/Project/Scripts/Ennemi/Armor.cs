@@ -14,7 +14,8 @@ public class Armor : MonoBehaviour
 
     public void Break()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void Update()

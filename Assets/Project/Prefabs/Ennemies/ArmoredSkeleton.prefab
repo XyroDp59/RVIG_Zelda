@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
-  healthBarFill: {fileID: 0}
+  healthBarFill: {fileID: 5804049794556146731}
   armor: {fileID: 7262967835539639178}
   Death:
     m_PersistentCalls:
@@ -2990,6 +2990,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c67043b85807944fb611a96f3805035, type: 3}
+--- !u!224 &5804049794556146731 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7816320698135982165, guid: 4c67043b85807944fb611a96f3805035, type: 3}
+  m_PrefabInstance: {fileID: 4392424477596517502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8755280217007190429 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5004631898176681443, guid: 4c67043b85807944fb611a96f3805035, type: 3}
@@ -3057,7 +3062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668390385156909093, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 4294967295
+      value: 247
       objectReference: {fileID: 0}
     - target: {fileID: 6668390385156909093, guid: 33aa18013d288ce4fb5605dabdf58b2a, type: 3}
       propertyPath: m_IncludeLayers.m_Bits

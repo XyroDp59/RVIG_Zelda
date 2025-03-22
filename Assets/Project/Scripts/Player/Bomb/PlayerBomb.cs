@@ -34,8 +34,8 @@ namespace Project.Scripts.Player.Bomb
 
         /*
          
-        garder en mémoire une liste des positions toutes les 1/f secondes des throw_Duration dernières secondes
-        rendre la force du lancer proportionnel à la distance (en local position) entre la 1ere et la dernière position de la liste
+        garder en memoire une liste des positions toutes les 1/f secondes des throw_Duration dernieres secondes
+        rendre la force du lancer proportionnel ï¿½ la distance (en local position) entre la 1ere et la derniere position de la liste
          
          */
 

@@ -546,9 +546,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  attackDuration: 1.2
+  attackStartUpDuration: 0.3
+  attackDuration: 0.2
+  attackLag: 3
   damager: {fileID: 4030564963163105643}
-  stunDuration: 1
+  stunDuration: 1.4
 --- !u!54 &5305311719143149702
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -573,9 +575,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2011696680844876847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2721,7 +2723,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -2743,12 +2745,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 0
   damage: 10
+  blocked:
+    m_PersistentCalls:
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
       m_Calls: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
+  collider: {fileID: 0}
 --- !u!4 &6567261168348322274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4968872607988292219, guid: 78925be475d86164f92d73a589da7cba, type: 3}

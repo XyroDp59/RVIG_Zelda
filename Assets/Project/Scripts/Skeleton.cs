@@ -5,7 +5,9 @@ using UnityEngine.AI;
 public class Skeleton : MonoBehaviour
 {
     [SerializeField] private bool isActive;
+    [SerializeField] private float attackStartUpDuration;
     [SerializeField] private float attackDuration;
+    [SerializeField] private float attackLag;
     [SerializeField] private Damager damager;
     [SerializeField] private float stunDuration;
     private GameObject _player;
@@ -17,6 +19,7 @@ public class Skeleton : MonoBehaviour
     private int _attackTrigHash;
     private int _hitTrigHash;
     private Health _health;
+    private bool _attackHitBoxActive;
 
     private enum State
     {
@@ -39,6 +42,7 @@ public class Skeleton : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _agent = GetComponent<NavMeshAgent>();
         _state = State.Default;
+        damager.blocked.AddListener(OnBlock);
     }
 
     private void Start()
@@ -46,8 +50,15 @@ public class Skeleton : MonoBehaviour
         _health.Death.AddListener(Death);
     }
 
+    private void OnBlock()
+    {
+        StartCoroutine(DamagedRoutine());
+    }
+
     private void FixedUpdate()
     {
+        damager.collider.enabled = _state == State.Attacking && _attackHitBoxActive;
+        
         if(!isActive || !_player || _state != State.Default) return;
         //CustomDebugger.log(distance.ToString());
         
@@ -58,6 +69,7 @@ public class Skeleton : MonoBehaviour
 
         if (distance < _agent.stoppingDistance)
         {
+            Debug.Log(_state);
             StartCoroutine(AttackRoutine());
         }
         else
@@ -69,17 +81,28 @@ public class Skeleton : MonoBehaviour
 
     private IEnumerator AttackRoutine()
     {
+        Debug.Log("here");
         _state = State.Attacking;
         animator.SetBool(_walkBoolHash, false);
         animator.SetTrigger(_attackTrigHash);
         _agent.SetDestination(transform.position);
 
+        yield return null;
+        
+        yield return new WaitForSeconds(attackStartUpDuration);
+        _attackHitBoxActive = true;
+
         yield return new WaitForSeconds(attackDuration);
+        _attackHitBoxActive = false;
+
+        yield return new WaitForSeconds(attackLag);
         if(_state == State.Attacking) _state = State.Default;//permet de ne pas interrompre une animation de degats
     }
 
     private IEnumerator DamagedRoutine()
     {
+        _attackHitBoxActive = false;
+        if(_state == State.Attacking) StopCoroutine(AttackRoutine()); 
         //CustomDebugger.log("damaged routine");
         yield return null;//wait to see if death triggered
         if (_state != State.Ded)

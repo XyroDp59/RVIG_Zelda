@@ -3836,6 +3836,18 @@ PrefabInstance:
       propertyPath: m_Renderer
       value: 
       objectReference: {fileID: 11563137582882671}
+    - target: {fileID: 7181654441343908400, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181654441343908400, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356721184432575932, guid: f0899dededc3a4ae48a91994c4ffc6c4, type: 3}
+      propertyPath: m_TagString
+      value: Shield
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3982,12 +3994,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team: 1
   damage: -10
+  blocked:
+    m_PersistentCalls:
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
       m_Calls: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
+  collider: {fileID: 0}
 --- !u!1001 &8800565525290990150
 PrefabInstance:
   m_ObjectHideFlags: 0

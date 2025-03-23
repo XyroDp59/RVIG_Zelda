@@ -49,7 +49,6 @@ public class BowMovement : MonoBehaviour
         
         _currentArrow.transform.position = stringMiddle.transform.position;
         _currentArrow.transform.parent = stringMiddle.transform;
-        _releaseSound.Play();
     }
 
     public void OnStringRelease()
@@ -66,6 +65,7 @@ public class BowMovement : MonoBehaviour
         _arrowActive = false;
         _currentArrow = null;
         StartCoroutine(ArrowCoroutine());
+        _releaseSound.Play();
     }
 
     IEnumerator ArrowCoroutine()

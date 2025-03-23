@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         if (armor && health <0) return;
         Damaged.Invoke();
         currentHealth = Mathf.Clamp(currentHealth + health, 0, maxHealth);
-        CustomDebugger.log($"Health changed to {currentHealth}");
+        //CustomDebugger.log($"Health changed to {currentHealth}");
         
         if(healthBarFill)
         {

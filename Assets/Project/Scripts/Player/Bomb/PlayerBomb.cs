@@ -111,7 +111,7 @@ namespace Project.Scripts.Player.Bomb
 
         IEnumerator TickingTimer()
         {
-            CustomDebugger.log("tick tock");
+            //CustomDebugger.log("tick tock");
             rb.useGravity = true;
             isTicking = true;
             transform.SetParent(null);
@@ -131,7 +131,7 @@ namespace Project.Scripts.Player.Bomb
 
         IEnumerator SpawnNewBombDelay()
         {
-            CustomDebugger.log("spawn delay coroutine");
+            //CustomDebugger.log("spawn delay coroutine");
             yield return cooldown;
             SpawnNewBomb();
         }
@@ -140,7 +140,7 @@ namespace Project.Scripts.Player.Bomb
         {
             if (bombSpawner.childCount == 0)
             {
-                CustomDebugger.log("spawning new bomb");
+                //CustomDebugger.log("spawning new bomb");
                 GameObject go = Instantiate(bombPrefab, bombSpawner);
                 go.transform.localPosition = Vector3.zero;
             }
@@ -149,7 +149,7 @@ namespace Project.Scripts.Player.Bomb
         public void Explodes()
         {
             if(!mesh.enabled || !_canExplode) return;
-            CustomDebugger.log("explode");
+            //CustomDebugger.log("explode");
             GameObject go = Instantiate(explosionParticles, transform.position, transform.rotation).gameObject;
             go.SetActive(true);
             SpawnNewBomb();

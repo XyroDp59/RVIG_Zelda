@@ -29,7 +29,7 @@ public class Armor : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out s))
         {
             //s.Parry();
-            CustomDebugger.log("bonk");
+            //CustomDebugger.log("bonk");
         }
     }
 

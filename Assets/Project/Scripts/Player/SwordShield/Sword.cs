@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour
 
     public void OnSwordReleased()
     {
-        CustomDebugger.log("Sword released");
+        //CustomDebugger.log("Sword released");
         swordActive = false;
         transform.SetParent(defaultParent);
         transform.localPosition = _defaultPosition;

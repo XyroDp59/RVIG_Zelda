@@ -102,7 +102,7 @@ public class FlyingEnemy : MonoBehaviour
         //CustomDebugger.log(collision.gameObject.name + "collided");
         if (collision.collider.CompareTag("Weapon"))
         {
-            CustomDebugger.log("ouch");
+            //CustomDebugger.log("ouch");
             OnDamaged();
             StopCoroutine(FireCoroutine());
             _rigidbody.useGravity = true;

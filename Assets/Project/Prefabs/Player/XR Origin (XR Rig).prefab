@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 2679071824241299813}
   - component: {fileID: 6101762693980286719}
   - component: {fileID: 4915758312033202574}
+  - component: {fileID: 3128271793983659555}
   m_Layer: 2
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -356,6 +357,18 @@ MonoBehaviour:
   Damaged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3128271793983659555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259137635992405955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e3efed2bb57440eb5e6a367a475f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &762007916422366973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,7 +1794,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

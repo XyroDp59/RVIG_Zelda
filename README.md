@@ -1,17 +1,26 @@
-# Zelda Arena
-**Zelda Arena** est un jeu en réalité virtuelle donc le but est de se battre contre des vagues d'énemies. Armée d'une **epée**, d'un **bouclier**, d'un **arc** et de **bombes** vous allez devoir vous battre contres des enemies parfois en armure et même volant.
+# Zelda Arena  
 
-## But du jeu
-Le but du jeu est de tuer un maximum d'énemies sans mourir ! 
+**Zelda Arena** est un jeu en réalité virtuelle dont le but est de se battre contre des vagues d'ennemis.  
+Armé d'une **épée**, d'un **bouclier**, d'un **arc** et de **bombes**, vous devrez affronter des ennemis, parfois en armure et même volants.  
 
-## Comment jouer ? 
+## But du jeu  
+L'objectif est de tuer un maximum d'ennemis sans mourir !  
 
-### L'épée
-Au nivaux du bassins sur le cotée gauche, l'utilisateur trouvera une épée qu'il peut prendre. Une fois pris, un bouclier apparait automatiquement dans l'autre main. L'utilisateur peut ainsi attaquer les enemies avec l'épée et parer les coups avec le bouclier.
+## Comment jouer ?  
 
-### L'arc
-Au nivaux du bassins sur le cotée droit, l'utilisateur trouvera un arc qu'il peut prendre. Une fois pris, une flèche apparait automatiquement dans l'autre main. Pour tirer une flèche il suffit simplement de prendre le millieu de la corde avec la gachette, puis la flèche partira quand la gachette sera relaché. L'arc est particulièrement utile afin d'attaquer les enemies volants.
+### 🗡️ L'épée  
+Au niveau du bassin, sur le côté gauche, l'utilisateur trouvera une épée qu'il peut prendre.  
+Une fois saisie, un bouclier apparaît automatiquement dans l'autre main.  
+L'utilisateur peut ainsi attaquer les ennemis avec l'épée et parer les coups avec le bouclier.  
 
-### Les bombes
-En haut de la tête, 'utilisateur trouvera une bombe qu'il peut prendre. Une fois pris, l'utilisateur peut la lancée dans la direction qu'il souhaite en bougeant la manette, puis en relachant la prise pendant le mouvement. La bombe est particulièrement utile afin de toucher les enemies en armures.
+### 🏹 L'arc  
+Au niveau du bassin, sur le côté droit, l'utilisateur trouvera un arc qu'il peut prendre.  
+Une fois saisi, une flèche apparaît automatiquement dans l'autre main.  
+Pour tirer une flèche, il suffit simplement d'attraper le milieu de la corde avec la **gâchette**, puis de **relâcher la gâchette** pour tirer.  
+L'arc est particulièrement utile pour attaquer les ennemis volants.  
+
+### 💣 Les bombes  
+Au-dessus de la tête, l'utilisateur trouvera une bombe qu'il peut prendre.  
+Une fois saisie, il peut la lancer dans la direction souhaitée en bougeant la manette, puis en **relâchant la prise pendant le mouvement**.  
+La bombe est particulièrement efficace contre les ennemis en armure.  
 

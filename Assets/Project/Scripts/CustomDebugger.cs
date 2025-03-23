@@ -11,13 +11,13 @@ public class CustomDebugger : MonoBehaviour
 
     public static void log(string s)
     {
-        instance.textUI.text += "\n" + s;
+        //instance.textUI.text += "\n" + s;
     }
     
     private void Start()
     {
         instance = this;
-        instance.textUI.text = "Suavemente";
+        instance.textUI.text = "";
     }
 
 }

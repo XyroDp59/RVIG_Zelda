@@ -13036,7 +13036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: _cooldown
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: maxSpawnableEnemies
@@ -13904,7 +13904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: _cooldown
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: maxSpawnableEnemies

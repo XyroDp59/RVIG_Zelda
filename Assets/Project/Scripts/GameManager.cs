@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Spawner[] Spawners;
+
+    private void Start()
     {
-        
+        Spawners = gameObject.GetComponentsInChildren<Spawner>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTutoExited()
     {
-        
+        CustomDebugger.log("tuto exited");
+        foreach (var spawner in Spawners)
+        {
+            spawner.activated = true;
+        }
     }
 }

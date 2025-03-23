@@ -23,15 +23,12 @@ public class BowMovement : MonoBehaviour
     private Arrow _currentArrow;
     private XRGrabInteractable _grabInteractable;
     private AudioSource _releaseSound;
-    private IEnumerator _arrowCoroutine;
 
 
     public void Awake()
     {
         _grabInteractable = GetComponent<XRGrabInteractable>();
         _releaseSound = GetComponent<AudioSource>();
-
-        _arrowCoroutine = ArrowCoroutine();
     }
 
     private void Start()
@@ -55,7 +52,6 @@ public class BowMovement : MonoBehaviour
         _bowTaken = false;
         _arrowActive = false;
         
-        StopCoroutine(_arrowCoroutine);
         if (_currentArrow != null)
         {
             Destroy(_currentArrow.gameObject);
@@ -89,14 +85,17 @@ public class BowMovement : MonoBehaviour
 
         _arrowActive = false;
         _currentArrow = null;
-        StartCoroutine(_arrowCoroutine);
+        
+        StartCoroutine(ArrowCoroutine());
         _releaseSound.Play();
     }
 
     IEnumerator ArrowCoroutine()
     {
         yield return new WaitForSeconds(0.5f);
-        CreateArrow();
+        
+        if (_bowTaken) CreateArrow();
+        yield return null;
     }
 
     void CreateArrow()

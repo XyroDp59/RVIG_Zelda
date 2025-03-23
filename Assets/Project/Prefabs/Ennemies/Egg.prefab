@@ -165,8 +165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b506734bda1504b07873f7b3c3ffae73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
-  damage: 1
+  team: 0
+  damage: 10
+  blocked:
+    m_PersistentCalls:
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -197,6 +200,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  collider: {fileID: 0}
 --- !u!1 &8276368932424938960
 GameObject:
   m_ObjectHideFlags: 0

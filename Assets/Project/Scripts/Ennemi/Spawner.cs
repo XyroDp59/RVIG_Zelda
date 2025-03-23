@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -25,10 +26,11 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawningCoroutine()
     {
-        yield return _delay;
-        int r = Random.Range(0, _prefabList.Count);
+        yield return activated ? _delay : null;
+        
         if (activated)
         {
+            int r = Random.Range(0, _prefabList.Count);
             _spawnedEnemies.Add(Instantiate(_prefabList[r], new Vector3(Random.Range(-5,5), 0, Random.Range(-5, 5)), Quaternion.identity));
             maxSpawnableEnemies--;
             
@@ -39,6 +41,11 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (!activated && maxSpawnableEnemies == 0) allDied = true;
+        //CustomDebugger.log(_spawnedEnemies.Count.ToString());
+        foreach (var enemy in _spawnedEnemies.ToList())
+        {
+            if (!enemy) _spawnedEnemies.Remove(enemy);
+        }
+        if (!activated && maxSpawnableEnemies == 0 && _spawnedEnemies.Count == 0) allDied = true;
     }
 }

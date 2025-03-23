@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class FlyingEnemy : MonoBehaviour
 {
+    [SerializeField] private bool isActive = true;
     [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private float projectileOffSet;
     [SerializeField] private Transform target;
@@ -39,8 +40,12 @@ public class FlyingEnemy : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        _agent.SetDestination(target.position);
-        StartCoroutine(FireCoroutine());
+        
+        if(isActive)
+        {
+            _agent.SetDestination(target.position);
+            StartCoroutine(FireCoroutine());
+        }
 
         _flapCoroutine = FlapCoroutine();
         StartCoroutine(_flapCoroutine);

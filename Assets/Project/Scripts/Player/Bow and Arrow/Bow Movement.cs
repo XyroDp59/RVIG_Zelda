@@ -52,6 +52,8 @@ public class BowMovement : MonoBehaviour
         _bowTaken = false;
         _arrowActive = false;
         Destroy(_currentArrow.gameObject);
+        _currentArrow = null;
+        
         transform.SetParent(defaultParent);
         transform.localPosition = _defaultPosition;
         transform.localRotation = _defaultRotation;
@@ -129,6 +131,15 @@ public class BowMovement : MonoBehaviour
         if (_bowTaken && _arrowActive && _isStringTaken)
         {
             _currentArrow.transform.rotation = Quaternion.LookRotation(transform.position-stringMiddle.transform.position);
+        }
+
+        if (!_bowTaken)
+        {
+            if (_currentArrow != null)
+            {
+                Destroy(_currentArrow.gameObject);
+                _currentArrow = null;
+            }
         }
         
     }

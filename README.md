@@ -20,7 +20,9 @@ Pour tirer une flèche, il suffit simplement d'attraper le milieu de la corde av
 L'arc est particulièrement utile pour attaquer les ennemis volants.  
 
 ### 💣 Les bombes  
-Au-dessus de la tête, l'utilisateur trouvera une bombe qu'il peut prendre.  
+Au-dessus de la tête, l'utilisateur trouvera des particules magiques. En **passant la main devant**, une bombe appraît qu'il peut alors **prendre avec la gachette**. 
+Au moment où la bombe est prise dans la main du joueur, celle-ci s'active et déclanche un minuteur de quelques secondes avant son explosion. 
+Cependant, si la bombe est lancé sur une armure, elle explosera à l'impact.
 Une fois saisie, il peut la lancer dans la direction souhaitée en bougeant la manette, puis en **relâchant la prise pendant le mouvement**.  
 La bombe est particulièrement efficace contre les ennemis en armure.  
 

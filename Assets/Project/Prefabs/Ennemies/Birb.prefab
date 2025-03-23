@@ -107,7 +107,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1534825778234379833
 MonoBehaviour:
@@ -125,6 +125,9 @@ MonoBehaviour:
   projectileOffSet: 0.6
   target: {fileID: 0}
   nose: {fileID: 3111114531001553520}
+  injuredSound: {fileID: 8300000, guid: ff12a523f32d49774917cef021f86a80, type: 3}
+  flap1: {fileID: 8300000, guid: c9c8e37f73847d7d58436fac053fd877, type: 3}
+  flap2: {fileID: 8300000, guid: 15bc4d47c03af2910bee60263d6890a7, type: 3}
 --- !u!114 &7670461639491049924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ff12a523f32d49774917cef021f86a80, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.221
   m_Pitch: 1
   Loop: 0
   Mute: 0

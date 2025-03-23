@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,19 +11,28 @@ public class FlyingEnemy : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Transform nose;
     
+    // Sounds
+    [SerializeField] private AudioClip injuredSound;
+    [SerializeField] private AudioClip flap1;
+    [SerializeField] private AudioClip flap2;
+    
+    
     private NavMeshAgent _agent;
-    private AudioSource _injuredSound;
+    private AudioSource _audioSource;
     private Rigidbody _rigidbody;
     private Animator _animator;
     private int _deathTrigHash;
     
+    private IEnumerator _flapCoroutine;
+    
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _injuredSound = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _deathTrigHash = Animator.StringToHash("Death");
+        _animator.enabled = false;
     }
 
     private void Start()
@@ -33,8 +43,23 @@ public class FlyingEnemy : MonoBehaviour
         }
         _agent.SetDestination(target.position);
         StartCoroutine(FireCoroutine());
+
+        _flapCoroutine = FlapCoroutine();
+        StartCoroutine(_flapCoroutine);
     }
 
+    IEnumerator FlapCoroutine()
+    {
+        _animator.enabled = true;
+        while (true)
+        {
+            _audioSource.PlayOneShot(flap1);
+            yield return new WaitForSeconds(0.5f);
+            _audioSource.PlayOneShot(flap2);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+    
     IEnumerator FireCoroutine()
     {
         while (true)
@@ -65,7 +90,8 @@ public class FlyingEnemy : MonoBehaviour
 
     public void OnDamaged()
     {
-        _injuredSound.Play();
+        StopCoroutine(_flapCoroutine);
+        _audioSource.PlayOneShot(injuredSound);
     }
 
     // private void OnTriggerEnter(Collider other)

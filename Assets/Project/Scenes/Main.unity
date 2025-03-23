@@ -9750,6 +9750,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1192041608}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlayerDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915758312033202574, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
+      propertyPath: Death.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5073739752076465034, guid: 56e648f8d38d24649a5561ac8974ec66, type: 3}
       propertyPath: m_ThrowSmoothingDuration
       value: 1
@@ -12760,6 +12788,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
+      propertyPath: maxSpawnableEnemies
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: _prefabList.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -13700,6 +13732,10 @@ PrefabInstance:
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: _cooldown
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
+      propertyPath: maxSpawnableEnemies
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5004841101341734051, guid: e3bb9b037d130cd40803fe1dfb1a0c57, type: 3}
       propertyPath: _prefabList.Array.size

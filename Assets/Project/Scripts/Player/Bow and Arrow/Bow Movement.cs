@@ -12,6 +12,11 @@ public class BowMovement : MonoBehaviour
 
     public bool bowIsLeft;
     
+    //The next 3 lines are duplicated code, too late to fix :(
+    private Transform defaultParent;
+    private Vector3 _defaultPosition;
+    private Quaternion _defaultRotation;
+    
     private bool _bowTaken;
     private bool _arrowActive;
     private bool _isStringTaken;
@@ -24,6 +29,13 @@ public class BowMovement : MonoBehaviour
     {
         _grabInteractable = GetComponent<XRGrabInteractable>();
         _releaseSound = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        _defaultPosition = transform.localPosition;
+        _defaultRotation = transform.localRotation;
+        defaultParent = transform.parent;
     }
     
 
@@ -40,6 +52,9 @@ public class BowMovement : MonoBehaviour
         _bowTaken = false;
         _arrowActive = false;
         Destroy(_currentArrow.gameObject);
+        transform.SetParent(defaultParent);
+        transform.localPosition = _defaultPosition;
+        transform.localRotation = _defaultRotation;
     }
 
     public void OnStringTaken()

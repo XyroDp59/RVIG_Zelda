@@ -12,7 +12,8 @@ public class Skeleton : MonoBehaviour
     [SerializeField] private float stunDuration;
     private GameObject _player;
     private NavMeshAgent _agent;
-    
+    private AudioSource _source;
+
     private Animator animator;
     private int _deathTrigHash;
     private int _walkBoolHash;
@@ -43,6 +44,7 @@ public class Skeleton : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _state = State.Default;
         damager.blocked.AddListener(OnBlock);
+        _source = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -117,6 +119,7 @@ public class Skeleton : MonoBehaviour
     private void Death()
     {
         animator.SetTrigger(_deathTrigHash);
+        _source.Play();
         _state = State.Ded;
         Destroy(gameObject, 1f);
     }

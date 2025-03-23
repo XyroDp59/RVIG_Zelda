@@ -12,6 +12,7 @@ namespace Project.Scripts.Player.Bomb
         [SerializeField] private float cooldownBetweenBombs = 1f;
 
         private bool isTicking = false;
+        private bool _canExplode;
         WaitForSeconds second = new WaitForSeconds(1);
         WaitForSeconds halfSecond = new WaitForSeconds(0.5f);
         WaitForSeconds cooldown;
@@ -35,7 +36,7 @@ namespace Project.Scripts.Player.Bomb
         /*
          
         garder en memoire une liste des positions toutes les 1/f secondes des throw_Duration dernieres secondes
-        rendre la force du lancer proportionnel � la distance (en local position) entre la 1ere et la derniere position de la liste
+        rendre la force du lancer proportionnel à la distance (en local position) entre la 1ere et la derniere position de la liste
          
          */
 
@@ -90,6 +91,7 @@ namespace Project.Scripts.Player.Bomb
 
         public void StartTickingTimer()
         {
+            _canExplode = true;
             if (!isTicking) StartCoroutine(TickingTimer());
             StartCoroutine(SpawnNewBombDelay());
         }
@@ -109,6 +111,7 @@ namespace Project.Scripts.Player.Bomb
 
         IEnumerator TickingTimer()
         {
+            CustomDebugger.log("tick tock");
             rb.useGravity = true;
             isTicking = true;
             transform.SetParent(null);
@@ -128,6 +131,7 @@ namespace Project.Scripts.Player.Bomb
 
         IEnumerator SpawnNewBombDelay()
         {
+            CustomDebugger.log("spawn delay coroutine");
             yield return cooldown;
             SpawnNewBomb();
         }
@@ -136,6 +140,7 @@ namespace Project.Scripts.Player.Bomb
         {
             if (bombSpawner.childCount == 0)
             {
+                CustomDebugger.log("spawning new bomb");
                 GameObject go = Instantiate(bombPrefab, bombSpawner);
                 go.transform.localPosition = Vector3.zero;
             }
@@ -143,11 +148,13 @@ namespace Project.Scripts.Player.Bomb
 
         public void Explodes()
         {
+            if(!mesh.enabled || !_canExplode) return;
+            CustomDebugger.log("explode");
             GameObject go = Instantiate(explosionParticles, transform.position, transform.rotation).gameObject;
             go.SetActive(true);
+            SpawnNewBomb();
             Destroy(gameObject);
             Destroy(go, 3f);
-            SpawnNewBomb();
         }
 
         private void OnCollisionEnter(Collision collision)

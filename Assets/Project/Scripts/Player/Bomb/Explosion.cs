@@ -7,7 +7,7 @@ public class Explosion : MonoBehaviour
     [SerializeField, Range(1,10)] private int bombDamage;
     private void OnTriggerEnter(Collider other)
     {
-        CustomDebugger.log("Triggered :" + other.gameObject.name);
+        //CustomDebugger.log("Triggered :" + other.gameObject.name);
         Armor armor;
         if(other.TryGetComponent(out armor))
         {
